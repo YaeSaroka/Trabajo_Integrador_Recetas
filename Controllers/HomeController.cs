@@ -97,12 +97,12 @@ public class HomeController : Controller
     }
     public IActionResult BuscarPorReceta(Receta recetita)
     {
-        ViewBag._recetita=BD.Models.BD.BuscarPorReceta(recetita.Titulo);
-        return View("Receta");
+        ViewBag._recetitas=BD.Models.BD.BuscarPorReceta(recetita.Titulo);
+        return View("Buscador");
     }
     public IActionResult BuscarPorIngrediente(Ingrediente ingrediente_)
     {
-        ViewBag.ingredientito=BD.Models.BD.BuscarPorReceta(ingrediente_.Nombre_Ingrediente);
-        return View("Receta");
+        ViewBag.ingredientitos=BD.Models.BD.BuscarPorReceta(ingrediente_.Nombre_Ingrediente);
+        return View("Buscador");
     }
 }
