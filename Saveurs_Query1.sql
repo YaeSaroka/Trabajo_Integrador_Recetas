@@ -46,3 +46,7 @@ Precio INT,
 CantidadPersonas INT,
 IdCategoria INT
 );
+
+
+
+
