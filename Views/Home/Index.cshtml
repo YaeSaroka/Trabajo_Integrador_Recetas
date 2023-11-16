@@ -2,7 +2,42 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+<div class="container">
+            <div id="carouselExampleAutoplaying" class="carousel slide carousel-fotos" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    @{
+                        bool Activo=true;
+                        foreach (Receta item in ViewBag.RecetasCarrusel)
+                        {
+                          <div class="row">
+                              <div class='carousel-item @(Activo == true ? "active" : "")'>
+                                <div class="col-md-6 mx-auto">
+                                    <img src="@item.Imagen" class="d-block w-100" alt="..."> <!-- Agregado ms-3 aquí -->
+                                </div>
+                                <div class="col-md-6 bg-info">
+                                  <div>@item.Titulo</div>
+                                </div>
+                              </div>
+                          </div>
+                          Activo=false;
+                        }
+                    }
+                </div>
+            </div>
+          </div>
+    </div>
+</div>
+
+
+
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="false"></span>
+    <span class="visually-hidden" >Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+    <span class="carousel-control-next-icon" style="color: black;" aria-hidden="false"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
 </div>

@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using Dapper;
-namespace BD.Models;
+namespace Integrador.Models;
 public static class BD
 {
      private static string ConnectionString { get; set; } = @"Server=.;DataBase=Saveurs;Trusted_Connection=True;";
@@ -68,12 +68,12 @@ public static class BD
         }
         return card;
     }
-    public static List<Receta> CargarRecetasCarrousel(int IdReceta )
+    public static List<Receta> CargarRecetasCarrousel()
     {
        List<Receta> recetita = null;
         using(SqlConnection db = new SqlConnection(ConnectionString)){
             string sp = "CargarRecetasCarrousel";
-            recetita= db.Query<Receta>(sp, new { pIdReceta = IdReceta }, commandType: CommandType.StoredProcedure).ToList();
+            recetita= db.Query<Receta>(sp,  commandType: CommandType.StoredProcedure).ToList();
         }
         return recetita;
     }
@@ -96,21 +96,21 @@ public static class BD
         }
         return recetita;
     }
-    public static Receta BuscarPorReceta(string Titulo )
+    public static List<Receta> BuscarPorReceta(string Titulo )
     {
-       Receta buscador_receta = null;
+       List<Receta> buscador_receta = null;
         using(SqlConnection db = new SqlConnection(ConnectionString)){
             string sp = "BuscarPorReceta";
-            buscador_receta= db.QueryFirstOrDefault<Receta>(sp, new { pTitulo = Titulo }, commandType: CommandType.StoredProcedure);
+            buscador_receta= db.Query<Receta>(sp, new { pTitulo = Titulo }, commandType: CommandType.StoredProcedure).ToList();
         }
         return buscador_receta;
     }
-    public static Ingrediente BuscarPorIngrediente(string Nombre_Ingrediente )
+    public static  List<Ingrediente> BuscarPorIngrediente(string Nombre_Ingrediente )
     {
-       Ingrediente buscador_ingrediente = null;
+        List<Ingrediente> buscador_ingrediente = null;
         using(SqlConnection db = new SqlConnection(ConnectionString)){
             string sp = "BuscarPorIngrediente";
-            buscador_ingrediente= db.QueryFirstOrDefault<Ingrediente>(sp, new { pNombre_Ingrediente = Nombre_Ingrediente }, commandType: CommandType.StoredProcedure);
+            buscador_ingrediente= db.Query<Ingrediente>(sp, new { pNombre_Ingrediente = Nombre_Ingrediente }, commandType: CommandType.StoredProcedure).ToList();
         }
         return buscador_ingrediente;
     }

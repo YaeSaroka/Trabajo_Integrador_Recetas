@@ -78,10 +78,9 @@ GO
 
 /*CARROUSEL*/
 CREATE PROCEDURE CargarRecetasCarrousel
-	-- Add the parameters for the stored procedure here
 AS
 BEGIN
-	SELECT * FROM Receta WHERE IdReceta IN (SELECT IdReceta FROM Receta_Carrousel)
+	SELECT * FROM Receta_Carrousel 
 END
 GO
 

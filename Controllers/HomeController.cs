@@ -15,6 +15,7 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
+        ViewBag.RecetasCarrusel = BD.CargarRecetasCarrousel();
         return View();
     }
 
@@ -32,8 +33,8 @@ public class HomeController : Controller
     [HttpPost]
     public IActionResult Login( string Contraseña,string Username)
     {
-        Usuario Usuario = BD.Models.BD.Login(Contraseña, Username);
-        Usuario userr = BD.Models.BD.Login_VerificarContraseña(Contraseña);
+        Usuario Usuario = Models.BD.Login(Contraseña, Username);
+        Usuario userr = Models.BD.Login_VerificarContraseña(Contraseña);
         if (Usuario == null )
         {
             ViewBag.MensajeError = "Usuario inexistente";
@@ -52,9 +53,9 @@ public class HomeController : Controller
     }
     [HttpPost]
     public IActionResult RegistrarUsuario(Usuario user){
-        Usuario userr = BD.Models.BD.Registro_VerificarExistencia(user.Username);
+        Usuario userr = BD.Registro_VerificarExistencia(user.Username);
         if(userr == null){
-            BD.Models.BD.Registro(user.Username, user.Contraseña, user.Mail);
+           BD.Registro(user.Username, user.Contraseña, user.Mail);
             return View("Index");
         }
         else{
@@ -64,7 +65,7 @@ public class HomeController : Controller
     }
     public IActionResult OlvidarContraseña(string Mail)
     {
-        string contraseña = BD.Models.BD.OlvideMiContraseña(Mail);
+        string contraseña = BD.OlvideMiContraseña(Mail);
         if(contraseña == null || contraseña == "") {
             ViewBag.MensajeInexistente = "No existe el mail ingresado anteriormente";
             return View("Olvido");
@@ -77,32 +78,32 @@ public class HomeController : Controller
     }
     public IActionResult Card_principal(Categoria cate)
     {
-        ViewBag.ListadoCards=BD.Models.BD.CargarCategoriaCard(cate.IdCategoria);
+        ViewBag.ListadoCards=BD.CargarCategoriaCard(cate.IdCategoria);
         return View("Index");
     }
-    public IActionResult Carrousel_principal(Receta recetita)
+    public IActionResult Carrousel_principal()
     {
-        ViewBag.ListadoRecetasCarrousel=BD.Models.BD.CargarRecetasCarrousel(recetita.IdReceta);
+        ViewBag.ListadoRecetasCarrousel=BD.CargarRecetasCarrousel();
         return View("Index");
     }
     public IActionResult CargarInfoUsuario(Usuario user)
     {
-        ViewBag.user_=BD.Models.BD.CargarInfoUsuario(user.IdUsuario);
+        ViewBag.user_=BD.CargarInfoUsuario(user.IdUsuario);
         return View("Usuario");
     }
     public IActionResult CargarReceta(Receta recetita)
     {
-        ViewBag.recetita_=BD.Models.BD.CargarReceta(recetita.IdReceta);
+        ViewBag.recetita_=BD.CargarReceta(recetita.IdReceta);
         return View("Receta");
     }
     public IActionResult BuscarPorReceta(Receta recetita)
     {
-        ViewBag._recetita=BD.Models.BD.BuscarPorReceta(recetita.Titulo);
-        return View("Receta");
+        ViewBag._recetitas=BD.BuscarPorReceta(recetita.Titulo);
+        return View("Buscador");
     }
     public IActionResult BuscarPorIngrediente(Ingrediente ingrediente_)
     {
-        ViewBag.ingredientito=BD.Models.BD.BuscarPorReceta(ingrediente_.Nombre_Ingrediente);
-        return View("Receta");
+        ViewBag.ingredientitos=BD.BuscarPorReceta(ingrediente_.Nombre_Ingrediente);
+        return View("Buscador");
     }
 }

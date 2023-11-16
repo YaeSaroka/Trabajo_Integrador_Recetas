@@ -20,3 +20,26 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.botonperson2{
+  background-color: #b4977d !important;
+  border: #b4977d;
+  color: white;
+  width: 70px;
+}
+.botonperson{
+  border-radius: 25px;
+}
+.container{
+  margin-left: 0%;
+  padding-left: 0%;
+}
+
+.iconitonav{
+  font-size: 20px;}
+
+.user_icon{
+  color:#b4977d ;
+  font-size: 50px;
+}
+

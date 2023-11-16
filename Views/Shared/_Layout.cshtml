@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -8,27 +12,36 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Integrador.styles.css" asp-append-version="true" />
 </head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+<body style="background-color: #FFF2E7;">
+    <header style="background-color: #E0BD9F;">
+       <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-#E0BD9F border-bottom box-shadow mb-3 ms-0">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Integrador</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+                <a asp-action="Index">
+                    <i class="fa fa-bars" id="icon" aria-hidden="true"></i>
+                </a>
+        <a asp-action="Index">
+            <img src="/Img/LGO.png" alt="logo" width="190px" class="img-fluid">
+        </a>
+        <form class="d-flex ms-3" role="search" >
+            <input class="form-control me-2 botonperson" type="search" placeholder="Busca lo que desees..." aria-label="Search" >
+            <button class="btn btn-outline-success botonperson2 " type="submit"><i class="fa-solid fa-magnifying-glass iconitonav"></i></button>
+        </form>
+        <button id="buscador" class="navbar-toggler  " type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+            <ul class="navbar-nav flex-grow-1">
+            </ul>
+        </div>
+    </div>
+    <div>
+        <a asp-action="Usuario">
+           <i class="fas fa-user-circle user_icon"></i>
+        </a>
+        </div>
+    
+</nav>
     </header>
     <div class="container">
         <main role="main" class="pb-3">
@@ -36,11 +49,7 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2023 - Integrador - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
+    
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
