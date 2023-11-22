@@ -1,8 +1,92 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+  <style>
+        body, html {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        .fondo-container {
+            background-color: #703a0b;
+            width: 100%;
+            position: fixed;
+            z-index: -1;
+        }
+        .carousel-container {
+            padding-top: 50px; 
+        }
+    </style>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<br><br><br><br>
+  <div class="fondo-container">
+    </div>
+<div class="container carousel-container">
+    <div id="carouselExampleAutoplaying" class="carousel slide carousel-fotos" data-bs-ride="carousel">
+        <div class="carousel-inner" style="text-align: center; width: 100%;">
+            @{
+                bool Activo = true;
+                foreach (Receta item in ViewBag.RecetasCarrusel)
+                {
+                      <div class='carousel-item @(Activo == true ? "active" : "")'>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img src="@item.Imagen" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="col-md-6" style="background-color: #FFF5EC !important;">
+                                <div>@item.Titulo</div>
+                                <div>@item.Titulo</div>
+                                <div>@item.Titulo</div>
+                                <div>@item.Titulo</div>
+                            </div>
+                        </div>
+                    </div>
+                    Activo = false;
+                }
+            }
+        </div>
+    </div>
+</div>
+
+
+
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="false"></span>
+    <span class="visually-hidden" >Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+    <span class="carousel-control-next-icon" style="color: black;" aria-hidden="false"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+
+
+
+<div class="text-center" style="background-color: #FFF2E7; margin: 0; padding: 0; justify-content: center; align-items: center; text-align: center;">
+    <section style="margin-top: 50px; max-width: 3300px">
+        <div class="row" style="padding-left: 250px; width: 2500px;">
+            @{
+                List<string> coloresFondoCards = new List<string> { "#FFD4E4", "#ECECA9", "#D6E6E5", "#A8916E" };
+                List<string> coloresBordeCards = new List<string> { "#FFD4E4", "#ECECA9", "#D6E6E5", "#A8916E" };
+
+                List<string> coloresFondoTitulos = new List<string> { "#FFC3EB", "#FEFEB0", "#ADCDCB", "#847157" };
+
+                for (int i = 0; i < ViewBag.Card_principal.Count; i++)
+                {
+                    <div class="col-md-2 col-10">
+                        <div class="card" style="background-color: @(coloresFondoCards[i % coloresFondoCards.Count]); border: solid @(coloresBordeCards[i % coloresBordeCards.Count]) 3px; max-width: 250px; margin: 20px; padding: 20px;">
+                            <img src="@ViewBag.Card_principal[i].Imagen" class="card-img-top" alt="ll" style="height: 200px; object-fit: cover;">
+                            <div class="card-body text-center">
+                                <h5 class="card-title" style="background-color: @(coloresFondoTitulos[i % coloresFondoTitulos.Count]); color: black;">@ViewBag.Card_principal[i].NombreCategoria</h5>
+                            </div>
+                        </div>
+                    </div>
+                    @if ((i + 1) % 4 == 0)
+                    {
+                        <div class="w-100"></div> <!-- Salto de línea -->
+                    }
+                }
+            }
+        </div>
+    </section>
 </div>
