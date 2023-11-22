@@ -30,10 +30,6 @@ body {
 .botonperson{
   border-radius: 25px;
 }
-.container{
-  margin-left: 0%;
-  padding-left: 0%;
-}
 
 .iconitonav{
   font-size: 20px;}
@@ -45,7 +41,17 @@ body {
 .navbar{
   background-color: #E0BD9F !important;
 }
+.caja{
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
 .container2{
   align-items: center;
-  display: flex !important;
+  justify-content: center;
+  text-align: center;
+}
+.card-img-top:hover {
+  transform: scale(1.1); /* Increase the size by 10% on hover */
+  transition: transform 0.3s ease; /* Add a smooth transition effect */
 }

@@ -16,9 +16,10 @@ public class HomeController : Controller
     public IActionResult Index()
     {
         ViewBag.RecetasCarrusel = BD.CargarRecetasCarrousel();
+         ViewBag.Card_principal = BD.CargarCategoriaCard();
         return View();
     }
-
+   
     public IActionResult Privacy()
     {
         return View();
@@ -78,7 +79,7 @@ public class HomeController : Controller
     }
     public IActionResult Card_principal(Categoria cate)
     {
-        ViewBag.ListadoCards=BD.CargarCategoriaCard(cate.IdCategoria);
+        ViewBag.ListadoCards=BD.CargarCategoriaCard();
         return View("Index");
     }
     public IActionResult Carrousel_principal()

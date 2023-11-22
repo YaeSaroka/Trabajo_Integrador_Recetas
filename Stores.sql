@@ -67,22 +67,21 @@ GO
 
 /*------------------------------------------------------------------------------------------------------------*/
 /*CATEGORIA*/
-CREATE PROCEDURE CargarCategoriaCard
+ALTER PROCEDURE CargarCategoriaCard
 	-- Add the parameters for the stored procedure here
-	@IdCategoria INT
 AS
 BEGIN
-	SELECT * FROM Categoria WHERE IdCategoria=@IdCategoria
+	SELECT Categoria.* FROM Categoria 
 END
 GO
 
 /*CARROUSEL*/
-CREATE PROCEDURE CargarRecetasCarrousel
+CREATE PROCEDURE [dbo].[CargarRecetasCarrousel]
 AS
 BEGIN
-	SELECT * FROM Receta_Carrousel 
+	SELECT Receta.* FROM Receta_Carrousel 
+		INNER JOIN Receta ON Receta.IdReceta = Receta_Carrousel.IdReceta
 END
-GO
 
 /*USUARIO*/
 CREATE PROCEDURE CargarInfoUsuario

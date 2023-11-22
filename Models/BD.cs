@@ -59,12 +59,12 @@ public static class BD
     }
     /*............................................................................................................................................*/
 
-    public static List<Categoria> CargarCategoriaCard(int IdCategoria)
+    public static List<Categoria> CargarCategoriaCard()
     {
        List<Categoria> card = null;
         using(SqlConnection db = new SqlConnection(ConnectionString)){
             string sp = "CargarCategoriaCard";
-            card= db.Query<Categoria>(sp, new { pIdCategoria = IdCategoria }, commandType: CommandType.StoredProcedure).ToList();
+            card= db.Query<Categoria>(sp, commandType: CommandType.StoredProcedure).ToList();
         }
         return card;
     }
