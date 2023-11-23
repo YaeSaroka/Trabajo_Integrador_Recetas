@@ -119,7 +119,7 @@ public static class BD
         Categoria obj = null;
         using(SqlConnection db = new SqlConnection(ConnectionString)){
             string sp = "CargarRecetaxCategoria";
-            obj= db.QueryFirstOrDefault<Categoria>(sp, new { pIdCategoria = IdCategoria }, commandType: CommandType.StoredProcedure);
+            obj= db.QueryFirstOrDefault<Categoria>(sp, new { IdCategoria=pIdCategoria }, commandType: CommandType.StoredProcedure);
         }
         return obj;
     }
@@ -128,7 +128,7 @@ public static class BD
        List<Receta> list_receta = null;
         using(SqlConnection db = new SqlConnection(ConnectionString)){
             string sp = "CargarCategoriaCard";
-            list_receta= db.Query<Receta>(sp,new { pIdCategoria = IdCategoria }, commandType: CommandType.StoredProcedure).ToList();
+            list_receta= db.Query<Receta>(sp,new {IdCategoria=pIdCategoria }, commandType: CommandType.StoredProcedure).ToList();
         }
         return list_receta;
     }
