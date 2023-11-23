@@ -1,6 +1,6 @@
 USE [master]
 GO
-/****** Object:  Database [Saveurs]    Script Date: 23/11/2023 08:13:27 ******/
+/****** Object:  Database [Saveurs]    Script Date: 23/11/2023 09:05:51 ******/
 CREATE DATABASE [Saveurs]
  CONTAINMENT = NONE
  ON  PRIMARY 
@@ -79,10 +79,10 @@ ALTER DATABASE [Saveurs] SET QUERY_STORE = OFF
 GO
 USE [Saveurs]
 GO
-/****** Object:  User [alumno]    Script Date: 23/11/2023 08:13:31 ******/
+/****** Object:  User [alumno]    Script Date: 23/11/2023 09:05:51 ******/
 CREATE USER [alumno] FOR LOGIN [alumno] WITH DEFAULT_SCHEMA=[dbo]
 GO
-/****** Object:  Table [dbo].[Categoria]    Script Date: 23/11/2023 08:13:31 ******/
+/****** Object:  Table [dbo].[Categoria]    Script Date: 23/11/2023 09:05:51 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -99,7 +99,7 @@ CREATE TABLE [dbo].[Categoria](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Ingrediente]    Script Date: 23/11/2023 08:13:31 ******/
+/****** Object:  Table [dbo].[Ingrediente]    Script Date: 23/11/2023 09:05:51 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -113,7 +113,7 @@ CREATE TABLE [dbo].[Ingrediente](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Receta]    Script Date: 23/11/2023 08:13:31 ******/
+/****** Object:  Table [dbo].[Receta]    Script Date: 23/11/2023 09:05:51 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -137,7 +137,7 @@ CREATE TABLE [dbo].[Receta](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Receta_Carrousel]    Script Date: 23/11/2023 08:13:31 ******/
+/****** Object:  Table [dbo].[Receta_Carrousel]    Script Date: 23/11/2023 09:05:51 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -151,7 +151,7 @@ CREATE TABLE [dbo].[Receta_Carrousel](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[RecetaxIngrediente]    Script Date: 23/11/2023 08:13:31 ******/
+/****** Object:  Table [dbo].[RecetaxIngrediente]    Script Date: 23/11/2023 09:05:51 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -167,7 +167,7 @@ CREATE TABLE [dbo].[RecetaxIngrediente](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Usuario]    Script Date: 23/11/2023 08:13:31 ******/
+/****** Object:  Table [dbo].[Usuario]    Script Date: 23/11/2023 09:05:51 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -184,10 +184,10 @@ CREATE TABLE [dbo].[Usuario](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-INSERT [dbo].[Categoria] ([IdCategoria], [NombreCategoria], [Descripcion], [Imagen], [Banner]) VALUES (1, N'Pastas', NULL, N'https://cdn.sanity.io/images/jsdrzfkj/production-esar/dedd244f2e7c66775801eec1f147251c745ec56c-2000x1334.jpg?w=800&h=534&fit=crop', NULL)
-INSERT [dbo].[Categoria] ([IdCategoria], [NombreCategoria], [Descripcion], [Imagen], [Banner]) VALUES (2, N'Carnes', NULL, N'https://media.istockphoto.com/id/1358009037/es/foto/filete-de-rib-eye-en-rodajas-y-a-la-parrilla-carne-de-res-jaspeada-de-rib-eye-sobre-una-tabla.jpg?s=612x612&w=0&k=20&c=KtrnZrTAOhfKWk3XX8HoqL0noYgFb43tl1VTOkY0WD0=', NULL)
-INSERT [dbo].[Categoria] ([IdCategoria], [NombreCategoria], [Descripcion], [Imagen], [Banner]) VALUES (3, N'Postres', NULL, N'https://artelpasteleria.com/wp-content/uploads/2021/09/torta-frutos-rojos-1.jpg', NULL)
-INSERT [dbo].[Categoria] ([IdCategoria], [NombreCategoria], [Descripcion], [Imagen], [Banner]) VALUES (4, N'Ensaladas', NULL, N'https://assets.unileversolutions.com/recipes-v2/165292.jpg', NULL)
+INSERT [dbo].[Categoria] ([IdCategoria], [NombreCategoria], [Descripcion], [Imagen], [Banner]) VALUES (1, N'Pastas', NULL, N'https://cdn.sanity.io/images/jsdrzfkj/production-esar/dedd244f2e7c66775801eec1f147251c745ec56c-2000x1334.jpg?w=800&h=534&fit=crop', N'bannerensaladas (2).png')
+INSERT [dbo].[Categoria] ([IdCategoria], [NombreCategoria], [Descripcion], [Imagen], [Banner]) VALUES (2, N'Carnes', NULL, N'https://media.istockphoto.com/id/1358009037/es/foto/filete-de-rib-eye-en-rodajas-y-a-la-parrilla-carne-de-res-jaspeada-de-rib-eye-sobre-una-tabla.jpg?s=612x612&w=0&k=20&c=KtrnZrTAOhfKWk3XX8HoqL0noYgFb43tl1VTOkY0WD0=', N'bannerensaladas(3).png')
+INSERT [dbo].[Categoria] ([IdCategoria], [NombreCategoria], [Descripcion], [Imagen], [Banner]) VALUES (3, N'Postres', NULL, N'https://artelpasteleria.com/wp-content/uploads/2021/09/torta-frutos-rojos-1.jpg', N'bannerensaladas (1).png')
+INSERT [dbo].[Categoria] ([IdCategoria], [NombreCategoria], [Descripcion], [Imagen], [Banner]) VALUES (4, N'Ensaladas', NULL, N'https://assets.unileversolutions.com/recipes-v2/165292.jpg', N'bannerensaladas.png')
 GO
 INSERT [dbo].[Ingrediente] ([IdIngrediente], [Nombre_Ingrediente]) VALUES (1, N'tomate')
 INSERT [dbo].[Ingrediente] ([IdIngrediente], [Nombre_Ingrediente]) VALUES (2, N'lechuga')
