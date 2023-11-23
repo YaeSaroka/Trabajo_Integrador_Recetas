@@ -107,4 +107,10 @@ public class HomeController : Controller
         ViewBag.ingredientitos=BD.BuscarPorReceta(ingrediente_.Nombre_Ingrediente);
         return View("Buscador");
     }
+    public IActionResult CargarRecetaxCategoria(int IdCategoria)
+    {
+        ViewBag.obj=BD.CargarCategoriaxId(IdCategoria);
+        ViewBag.list_receta=BD.CargarRecetaxCategoria(IdCategoria);
+        return View("Listado_Recetas");
+    }
 }
