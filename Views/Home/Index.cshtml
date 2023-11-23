@@ -7,18 +7,8 @@
             margin: 0;
             padding: 0;
         }
-        .fondo-container {
-            background-color: #703a0b;
-            width: 100%;
-            position: fixed;
-            z-index: -1;
-        }
-        .carousel-container {
-            padding-top: 50px; 
-        }
     </style>
 
-<br><br><br><br>
   <div class="fondo-container">
     </div>
 <div class="container carousel-container">
@@ -68,16 +58,16 @@
             @{
                 List<string> coloresFondoCards = new List<string> { "#FFD4E4", "#ECECA9", "#D6E6E5", "#A8916E" };
                 List<string> coloresBordeCards = new List<string> { "#FFD4E4", "#ECECA9", "#D6E6E5", "#A8916E" };
-
                 List<string> coloresFondoTitulos = new List<string> { "#FFC3EB", "#FEFEB0", "#ADCDCB", "#847157" };
 
                 for (int i = 0; i < ViewBag.Card_principal.Count; i++)
                 {
                     <div class="col-md-2 col-10">
                         <div class="card" style="background-color: @(coloresFondoCards[i % coloresFondoCards.Count]); border: solid @(coloresBordeCards[i % coloresBordeCards.Count]) 3px; max-width: 250px; margin: 20px; padding: 20px;">
-                            <img src="@ViewBag.Card_principal[i].Imagen" class="card-img-top" alt="ll" style="height: 200px; object-fit: cover;">
+                            <a href='@Url.Action("Listado_Recetas", new{IdCategoria=@ViewBag.Card_principal[i].IdCategoria}) '><img src="@ViewBag.Card_principal[i].Imagen" class="card-img-top" alt="ll" style="height: 200px; object-fit: cover;"></a>
                             <div class="card-body text-center">
                                 <h5 class="card-title" style="background-color: @(coloresFondoTitulos[i % coloresFondoTitulos.Count]); color: black;">@ViewBag.Card_principal[i].NombreCategoria</h5>
+                                
                             </div>
                         </div>
                     </div>
