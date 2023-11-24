@@ -22,19 +22,19 @@ GO
 /*REGISTRO*/
 CREATE PROCEDURE LoginUsuario
 	-- Add the parameters for the stored procedure here
-	@pUsername varchar, @pContraseña varchar
+	@pUsername varchar, @pContraseï¿½a varchar
 AS
 BEGIN
-	SELECT * FROM Usuario WHERE @pUsername= Username AND @pContraseña=Contraseña 
+	SELECT * FROM Usuario WHERE @pUsername= Username AND @pContraseï¿½a=Contraseï¿½a 
 END
 GO
 
-CREATE PROCEDURE Login_VerificarContraseña
+CREATE PROCEDURE Login_VerificarContraseï¿½a
 	-- Add the parameters for the stored procedure here
-	@Contraseña varchar
+	@Contraseï¿½a varchar
 AS
 BEGIN
-	SELECT Contraseña FROM Usuario WHERE  @Contraseña=Contraseña 
+	SELECT Contraseï¿½a FROM Usuario WHERE  @Contraseï¿½a=Contraseï¿½a 
 END
 GO
 
@@ -49,19 +49,19 @@ GO
 
 CREATE PROCEDURE Registro
 	-- Add the parameters for the stored procedure here
-	@Username varchar, @Contraseña varchar, @Mail varchar
+	@Username varchar, @Contraseï¿½a varchar, @Mail varchar
 AS
 BEGIN
-	INSERT INTO Usuario(Username, Contraseña, Mail) VALUES (@Username, @Contraseña, @Mail)
+	INSERT INTO Usuario(Username, Contraseï¿½a, Mail) VALUES (@Username, @Contraseï¿½a, @Mail)
 END
 GO
 
-CREATE PROCEDURE OlvideMiContraseña
+CREATE PROCEDURE OlvideMiContraseï¿½a
 	-- Add the parameters for the stored procedure here
 	@Mail varchar
 AS
 BEGIN
-	SELECT Contraseña FROM Usuario WHERE @Mail=Mail
+	SELECT Contraseï¿½a FROM Usuario WHERE @Mail=Mail
 END
 GO
 
