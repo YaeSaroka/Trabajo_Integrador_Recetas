@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\Integrador.bundle.scp.css"
     },
     {
+      "Id": "Z:\\ORT2023\\Programación\\4bimestre\\Integrador\\wwwroot\\Img\\Banner\\ENSALADAS_DE_LA_HUERTA.png",
+      "PackagePath": "staticwebassets\\Img\\Banner\\ENSALADAS_DE_LA_HUERTA.png"
+    },
+    {
       "Id": "Z:\\ORT2023\\Programación\\4bimestre\\Integrador\\wwwroot\\Img\\LGO.png",
       "PackagePath": "staticwebassets\\Img\\LGO.png"
     },
@@ -15,6 +19,10 @@
     {
       "Id": "Z:\\ORT2023\\Programación\\4bimestre\\Integrador\\wwwroot\\Img\\ensa.jpg",
       "PackagePath": "staticwebassets\\Img\\ensa.jpg"
+    },
+    {
+      "Id": "Z:\\ORT2023\\Programación\\4bimestre\\Integrador\\wwwroot\\Img\\form1.jpg",
+      "PackagePath": "staticwebassets\\Img\\form1.jpg"
     },
     {
       "Id": "Z:\\ORT2023\\Programación\\4bimestre\\Integrador\\wwwroot\\Img\\logo.png",

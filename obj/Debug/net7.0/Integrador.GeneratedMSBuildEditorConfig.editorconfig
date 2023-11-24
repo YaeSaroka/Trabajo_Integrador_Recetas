@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = Z:\ORT2023\Programación\4bimestre\Integrador
 build_property._RazorSourceGeneratorDebug = 
 
+[Z:/ORT2023/Programación/4bimestre/Integrador/Views/Home/AgregarReceta.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZ3JlZ2FyUmVjZXRhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [Z:/ORT2023/Programación/4bimestre/Integrador/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

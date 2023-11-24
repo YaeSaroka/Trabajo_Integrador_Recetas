@@ -67,7 +67,7 @@ GO
 
 /*------------------------------------------------------------------------------------------------------------*/
 /*CATEGORIA*/
-ALTER PROCEDURE CargarCategoriaCard
+CREATE PROCEDURE CargarCategoriaCard
 	-- Add the parameters for the stored procedure here
 AS
 BEGIN
@@ -119,5 +119,33 @@ CREATE PROCEDURE BuscarPorIngrediente
 AS
 BEGIN
 	SELECT IdIngrediente FROM Ingrediente WHERE @NombreIngrediente = Nombre_Ingrediente and IdIngrediente IN (SELECT IdReceta FROM RecetaxIngrediente)
+END
+GO
+
+CREATE PROCEDURE CargarRecetaxCategoria
+	-- Add the parameters for the stored procedure here
+	@IdCategoria INT
+AS
+BEGIN
+	SELECT * FROM Receta WHERE @IdCategoria=IdCategoria
+END
+GO
+
+CREATE PROCEDURE CargarCategoriaxId
+	-- Add the parameters for the stored procedure here
+	@IdCategoria INT
+AS
+BEGIN
+	SELECT * FROM Categoria WHERE @IdCategoria=IdCategoria
+END
+GO
+
+CREATE PROCEDURE AgregarReceta
+	-- Add the parameters for the stored procedure here
+	@IdCategoria INT, @Imagen varchar(500), @Titulo varchar(150), @Descripcion varchar(150),@Pasos INT,@CantidadPersonas INT,@Tiempo INT,@Precio INT,@Video varchar(650)
+AS
+BEGIN
+	INSERT INTO Receta (Imagen, Titulo, Descripcion, Pasos, CantidadPersonas, Tiempo, Precio, Video, IdCategoria)
+	VALUES (@Imagen, @Titulo, @Descripcion, @Pasos, @CantidadPersonas, @Tiempo, @Precio, @Video, @IdCategoria)
 END
 GO

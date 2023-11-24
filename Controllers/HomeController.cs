@@ -24,6 +24,19 @@ public class HomeController : Controller
     {
         return View();
     }
+   
+    public IActionResult AgregarReceta(int IdCategoria)
+    {
+       
+        ViewBag.IdCategoria = IdCategoria;
+        return View("AgregarReceta");
+    }
+    [HttpPost]
+    public IActionResult GuardarReceta(Receta recetas)
+    {
+        BD.AgregarReceta(recetas);
+        return RedirectToAction("Listado_Recetas",new{IdCategoria=recetas.IdCategoria});
+    }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
@@ -107,4 +120,10 @@ public class HomeController : Controller
         ViewBag.ingredientitos=BD.BuscarPorReceta(ingrediente_.Nombre_Ingrediente);
         return View("Buscador");
     }
+    public IActionResult Listado_Recetas(int IdCategoria)
+    {
+        ViewBag.obj=BD.CargarCategoriaxId(IdCategoria);
+        ViewBag.list_receta=BD.CargarRecetaxCategoria(IdCategoria);
+        return View("Listado_Recetas");
+    } 
 }

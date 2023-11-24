@@ -114,4 +114,34 @@ public static class BD
         }
         return buscador_ingrediente;
     }
+
+    public static Categoria CargarCategoriaxId(int pIdCategoria )
+    {
+        Categoria obj = null;
+        using(SqlConnection db = new SqlConnection(ConnectionString)){
+            string sp = "CargarCategoriaxId";
+            obj= db.QueryFirstOrDefault<Categoria>(sp, new { IdCategoria=pIdCategoria }, commandType: CommandType.StoredProcedure);
+        }
+        return obj;
+    }
+   public static List<Receta>CargarRecetaxCategoria (int pIdCategoria)
+    {
+       List<Receta> list_receta = null;
+        using(SqlConnection db = new SqlConnection(ConnectionString)){
+            string sp = "CargarRecetaxCategoria";
+            list_receta= db.Query<Receta>(sp,new { IdCategoria=pIdCategoria }, commandType: CommandType.StoredProcedure).ToList();
+        }
+        return list_receta;
+    }
+
+    public static void AgregarReceta(Receta recetas)
+    {   
+        using(SqlConnection db = new SqlConnection(ConnectionString)){
+            string sp = "AgregarReceta";
+            var parameters = new { Titulo=recetas.Titulo, Descripcion=recetas.Descripcion, Pasos=recetas.Pasos, CantidadPersonas=recetas.CantidadPersonas, Precio=recetas.Precio, Tiempo=recetas.Tiempo, Video=recetas.Video,  Imagen=recetas.Imagen,  IdCategoria=recetas.IdCategoria};
+            db.Execute(sp, parameters, commandType: CommandType.StoredProcedure);
+        }
+    }
+
+
 }

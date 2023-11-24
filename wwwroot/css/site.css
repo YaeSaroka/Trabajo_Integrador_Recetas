@@ -55,3 +55,131 @@ body {
   transform: scale(1.1); /* Increase the size by 10% on hover */
   transition: transform 0.3s ease; /* Add a smooth transition effect */
 }
+
+
+.banner{
+  width: 100%;
+  background-color: #e4d1c1;
+}
+
+@primary-color: #fff;
+@border-radius: 5px;
+@black-color: #351897;
+
+
+.cat {
+ margin-top: 50px;
+ font-family: Arial, Helvetica, sans-serif;
+ display: grid;
+ place-items: center;
+ min-height: 100vh;
+}
+
+.container3 {
+ background-color: #d3c3b5;
+ position: relative;
+ display: grid;
+ grid-template-columns: 300px 600px;
+ border-radius: border-radius;
+ box-shadow: 0 15px 20px rgba(0, 0, 0, 0.356);
+margin-bottom: 50px;
+}
+ .container3 img {
+  width: 300px;
+  height: 300px;
+  border-radius: border-radius 0 0 border-radius;
+ }
+ .container3 .btn {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  background-color: #918378;
+  color: primary-color;
+  padding: 22px 45px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  border-radius: border-radius;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.294);}
+  .btn i {
+   margin-left: 20px;
+   font-size: 1.5rem;
+  }
+.btn:hover{
+  background-color: #776c64;
+  color: white;
+}
+ 
+
+.container3__text {
+ padding: 40px 40px 0;}
+.container3__text  h1 {
+  color: black-color;
+  font-weight: 400;
+ }
+ .container3__text__star span {
+  font-size: 0.8rem;
+  color: #ffa800;
+  margin: -5px 0 20px;
+ }
+ p {
+  font-size: 0.9rem;
+ }
+ .container3__text__timing {
+  display: flex;
+  margin: 20px 0 10px;}
+  .container3__text__timing_time {
+   margin-right: 40px;
+  }
+  .container3__text__timing h2 {
+   margin-bottom: 5px;
+   font-size: 1rem;
+   font-weight: 400;
+   color: #818189;
+  }
+  .container3__text__timing p {
+   color: black-color;
+   font-weight: bold;
+   font-size: 1.2rem;
+  }
+ 
+  .sticky-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 100px; /* Ajusta el ancho según sea necesario */
+    height: 100px; /* Ajusta la altura según sea necesario */
+    background-color: #30833b;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 16px; /* Ajusta el tamaño de la fuente según sea necesario */
+    animation: blink 1s infinite alternate; /* Animación de parpadeo */
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+
+.form-control
+{
+  width: 30%;
+  margin-left: 670px;
+}
+
+
+/*----------------------------------------------------------------------------*/
+

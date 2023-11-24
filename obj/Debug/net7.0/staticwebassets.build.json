@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "WcB50CC4qOlWU3lLWl2yDgTh4LWZODNVwHa8QNZ/VcY=",
+  "Hash": "EpYygxENNJk5OxdO2i3dhEqxsz7lCZHgJe3VCaJ/gHw=",
   "Source": "Integrador",
   "BasePath": "_content/Integrador",
   "Mode": "Default",
@@ -85,6 +85,23 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
+      "Identity": "Z:\\ORT2023\\Programación\\4bimestre\\Integrador\\wwwroot\\Img\\Banner\\ENSALADAS_DE_LA_HUERTA.png",
+      "SourceId": "Integrador",
+      "SourceType": "Discovered",
+      "ContentRoot": "Z:\\ORT2023\\Programación\\4bimestre\\Integrador\\wwwroot\\",
+      "BasePath": "_content/Integrador",
+      "RelativePath": "Img/Banner/ENSALADAS_DE_LA_HUERTA.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Img\\Banner\\ENSALADAS_DE_LA_HUERTA.png"
+    },
+    {
       "Identity": "Z:\\ORT2023\\Programación\\4bimestre\\Integrador\\wwwroot\\Img\\ensa.jpg",
       "SourceId": "Integrador",
       "SourceType": "Discovered",
@@ -100,6 +117,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Img\\ensa.jpg"
+    },
+    {
+      "Identity": "Z:\\ORT2023\\Programación\\4bimestre\\Integrador\\wwwroot\\Img\\form1.jpg",
+      "SourceId": "Integrador",
+      "SourceType": "Discovered",
+      "ContentRoot": "Z:\\ORT2023\\Programación\\4bimestre\\Integrador\\wwwroot\\",
+      "BasePath": "_content/Integrador",
+      "RelativePath": "Img/form1.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Img\\form1.jpg"
     },
     {
       "Identity": "Z:\\ORT2023\\Programación\\4bimestre\\Integrador\\wwwroot\\Img\\LGO.png",
