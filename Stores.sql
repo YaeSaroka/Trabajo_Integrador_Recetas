@@ -20,21 +20,21 @@ GO
 -- =============================================
 
 /*REGISTRO*/
-CREATE PROCEDURE LoginUsuario
+ALTER PROCEDURE LoginUsuario
 	-- Add the parameters for the stored procedure here
-	@pUsername varchar, @pContrase�a varchar
+	@pUsername varchar(150), @pContraseña varchar(150)
 AS
 BEGIN
-	SELECT * FROM Usuario WHERE @pUsername= Username AND @pContrase�a=Contrase�a 
+	SELECT * FROM Usuario WHERE @pUsername=Username AND @pContraseña=Contraseña
 END
 GO
 
-CREATE PROCEDURE Login_VerificarContrase�a
+ALTER PROCEDURE Login_VerificarContraseña
 	-- Add the parameters for the stored procedure here
-	@Contrase�a varchar
+	@Contraseña varchar(150)
 AS
 BEGIN
-	SELECT Contrase�a FROM Usuario WHERE  @Contrase�a=Contrase�a 
+	SELECT Contraseña FROM Usuario WHERE  @Contraseña=Contraseña 
 END
 GO
 
@@ -47,21 +47,21 @@ BEGIN
 END
 GO
 
-CREATE PROCEDURE Registro
+ALTER PROCEDURE Registro
 	-- Add the parameters for the stored procedure here
-	@Username varchar, @Contrase�a varchar, @Mail varchar
+	@Username varchar(150), @Contraseña varchar(150), @Mail varchar(150)
 AS
 BEGIN
-	INSERT INTO Usuario(Username, Contrase�a, Mail) VALUES (@Username, @Contrase�a, @Mail)
+	INSERT INTO Usuario(Username, Contraseña, Mail) VALUES (@Username, @Contraseña, @Mail)
 END
 GO
 
-CREATE PROCEDURE OlvideMiContrase�a
+ALTER PROCEDURE OlvideMiContraseña
 	-- Add the parameters for the stored procedure here
-	@Mail varchar
+	@Mail varchar(150)
 AS
 BEGIN
-	SELECT Contrase�a FROM Usuario WHERE @Mail=Mail
+	SELECT Contraseña FROM Usuario WHERE @Mail=Mail
 END
 GO
 
@@ -140,12 +140,54 @@ BEGIN
 END
 GO
 
-CREATE PROCEDURE AgregarReceta
+ALTER PROCEDURE AgregarReceta
 	-- Add the parameters for the stored procedure here
-	@IdCategoria INT, @Imagen varchar(500), @Titulo varchar(150), @Descripcion varchar(150),@Pasos INT,@CantidadPersonas INT,@Tiempo INT,@Precio INT,@Video varchar(650)
+	@IdCategoria INT, @Imagen varchar(500), @Titulo varchar(150), @Descripcion varchar(150),@Pasos varchar(5000),@CantidadPersonas INT,@Tiempo INT,@Precio INT,@Video varchar(650),@Ingrediente varchar(max), @Cantidad varchar(max)
 AS
 BEGIN
-	INSERT INTO Receta (Imagen, Titulo, Descripcion, Pasos, CantidadPersonas, Tiempo, Precio, Video, IdCategoria)
-	VALUES (@Imagen, @Titulo, @Descripcion, @Pasos, @CantidadPersonas, @Tiempo, @Precio, @Video, @IdCategoria)
+	INSERT INTO Receta (Imagen, Titulo, Descripcion, Pasos, CantidadPersonas, Tiempo, Precio, Video, IdCategoria, Ingredientes, Cantidad)
+	VALUES (@Imagen, @Titulo, @Descripcion, @Pasos, @CantidadPersonas, @Tiempo, @Precio, @Video, @IdCategoria, @Ingrediente, @Cantidad)
+END
+GO
+
+
+CREATE PROCEDURE IngredientesModal
+	@IdReceta INT
+
+AS
+BEGIN
+	SELECT Ingrediente.Nombre_Ingrediente FROM Ingrediente
+	INNER JOIN RecetaxIngrediente ON RecetaxIngrediente.IdIngrediente=Ingrediente.IdIngrediente
+	WHERE RecetaxIngrediente.IdReceta=@IdReceta
+END
+GO
+
+CREATE PROCEDURE CantidadesIngredientes
+	@IdReceta INT
+
+AS
+BEGIN
+	SELECT RecetaxIngrediente.Cantidad FROM RecetaxIngrediente
+	INNER JOIN Ingrediente ON RecetaxIngrediente.IdIngrediente=Ingrediente.IdIngrediente
+	WHERE RecetaxIngrediente.IdReceta=@IdReceta
+END
+GO
+
+ALTER PROCEDURE UnIngrediente
+@Searching varchar(150)
+AS
+BEGIN 
+	SELECT * FROM Ingrediente
+	WHERE Nombre_Ingrediente LIKE CONCAT(@Searching, '%')
+END
+GO
+
+CREATE PROCEDURE Favoritos
+	@IdReceta INT
+
+AS
+BEGIN
+	SELECT * FROM Receta
+	WHERE IdReceta=@IdReceta
 END
 GO
